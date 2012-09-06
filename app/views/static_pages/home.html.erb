@@ -1,13 +1,92 @@
-<div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+	 <section>
+  
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Profile Updates</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+<div class="row">
+  <div  class="span5">
+    <h1>Hello!</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.  
+    </p>
+   
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
+<div class="span4" align="right">
+<img src="/assets/rails.png" />
 
-  <h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+     </div>
 </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // initialize scrollable
+  $(".scrollable").scrollable();
+});</script>
+<div style="margin:0 auto; width: 634px; height:120px;" class="panel">
+<!-- "previous page" action -->
+<a class="prev browse left "></a>
+ 
+<!-- root element for scrollable -->
+<div class="scrollable" id="scrollable">
+ 
+  <!-- root element for the items -->
+  <div class="items">
+ 
+    <!-- 1-5 -->
+    <div>
+      <img src="http://farm1.static.flickr.com/143/321464099_a7cfcb95cf_t.jpg" />
+      <img src="http://farm4.static.flickr.com/3089/2796719087_c3ee89a730_t.jpg" />
+      <img src="http://farm1.static.flickr.com/79/244441862_08ec9b6b49_t.jpg" />
+      <img src="http://farm1.static.flickr.com/28/66523124_b468cf4978_t.jpg" />
+    </div>
+ 
+    <!-- 5-10 -->
+    <div>
+      <img src="http://farm1.static.flickr.com/163/399223609_db47d35b7c_t.jpg" />
+      <img src="http://farm1.static.flickr.com/135/321464104_c010dbf34c_t.jpg" />
+      <img src="http://farm1.static.flickr.com/40/117346184_9760f3aabc_t.jpg" />
+      <img src="http://farm1.static.flickr.com/153/399232237_6928a527c1_t.jpg" />
+    </div>
+ 
+    <!-- 10-15 -->
+    <div>
+      <img src="http://farm4.static.flickr.com/3629/3323896446_3b87a8bf75_t.jpg" />
+      <img src="http://farm4.static.flickr.com/3023/3323897466_e61624f6de_t.jpg" />
+      <img src="http://farm4.static.flickr.com/3650/3323058611_d35c894fab_t.jpg" />
+      <img src="http://farm4.static.flickr.com/3635/3323893254_3183671257_t.jpg" />
+    </div>
+ 
+  </div>
+ 
+</div>
+ 
+<!-- "next page" action -->
+<a class="next browse right"></a>
+
+</div>
+
+<!--  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>-->
+<% end %>

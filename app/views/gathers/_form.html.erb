@@ -1,0 +1,16 @@
+<%= semantic_form_for @gather do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :title %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :user_id %>
+    <%= f.input :description %>
+    <%= f.input :time %>
+    <%= f.input :price %>
+    <%= f.input :location %>
+  <% end %>
+
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+<% end %>

@@ -5,7 +5,36 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+	
       </h1>
+
     </section>
+<p>
+<p>3 upcoming events in your area</p>
+<iframe width="240" height="350" src="http://meetu.ps/k8ql2" frameborder="0"></iframe>
+<p>show last 50 comments</p>
+<iframe width="250" height="450" src="http://meetu.ps/k8rZq" frameborder="0"></iframe>
+<p>stats for particular event</p>
+<iframe width="225" height="570" src="http://meetu.ps/k8sbn" frameborder="0"></iframe>
+</p>
+    <section>
+	<%= social_share_button_tag(@user.name) %>
+      <%= render 'shared/stats' %>
+<iframe width="63" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=63&height=24&uid=1642909335&style=1&btn=red&dpc=1"></iframe>
+    </section>
+
   </aside>
+  <div class="span8">
+    <%= render 'follow_form' if signed_in? %>
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+
+      </ol>
+	
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
 </div>
+

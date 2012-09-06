@@ -1,0 +1,5 @@
+class Meetup < ActiveRecord::Base
+#class Meetup < ActiveResource::Base
+  attr_accessible :content, :name, :title
+ # self.site = "http://api.meetup.com"
+end

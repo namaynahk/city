@@ -1,0 +1,23 @@
+<h1>Listing deletes</h1>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deletes.each do |delete| %>
+  <tr>
+    <td><%= delete.event %></td>
+    <td><%= link_to 'Show', delete %></td>
+    <td><%= link_to 'Edit', edit_delete_path(delete) %></td>
+    <td><%= link_to 'Destroy', delete, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Delete', new_delete_path %>

@@ -1,0 +1,37 @@
+<h1>Listing gathers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>User</th>
+    <th>Description</th>
+    <th>Time</th>
+    <th>Price</th>
+    <th>Location</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gathers.each do |gather| %>
+  <tr>
+    <td><%= gather.title %></td>
+    <td><%= gather.start_date %></td>
+    <td><%= gather.end_date %></td>
+    <td><%= gather.user_id %></td>
+    <td><%= gather.description %></td>
+    <td><%= gather.time %></td>
+    <td><%= gather.price %></td>
+    <td><%= gather.location %></td>
+    <td><%= link_to 'Show', gather %></td>
+    <td><%= link_to 'Edit', edit_gather_path(gather) %></td>
+    <td><%= link_to 'Destroy', gather, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gather', new_gather_path %>

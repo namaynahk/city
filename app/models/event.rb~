@@ -1,0 +1,14 @@
+class Event < ActiveRecord::Base
+  attr_accessor :description, :image, :end_date, :start_date, :title, :user_id
+has_attached_file :image,
+:styles => {:thumbnail => "100x100#", :large => "500x500#"}
+
+validates_attachment_size :image, :less_than => 5.megabytes,
+             :message => "Image should be present and less than 5 MB in size"
+
+validates_attachment_content_type :image,
+            :content_type => ['image/jpeg','image/png','image/jpg'],
+            :message => "Attachment should be a jpg, jpeg or a png"
+
+
+end

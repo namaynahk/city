@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @gather.title %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @gather.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @gather.end_date %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @gather.user_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @gather.description %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @gather.time %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @gather.price %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @gather.location %>
+</p>
+
+
+<%= link_to 'Edit', edit_gather_path(@gather) %> |
+<%= link_to 'Back', gathers_path %>
